@@ -1,189 +1,150 @@
 /* style.css */
 
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+  background: linear-gradient(135deg, #fddde6, #ffeedd);
   color: #333;
   overflow-x: hidden;
 }
 
 header {
-  background: #ff6b6b;
-  padding: 30px 0;
+  background: #ff6b81;
+  color: white;
   text-align: center;
-  animation: slideDown 1s ease-out;
+  padding: 20px 0;
+  animation: slideInDown 1s ease-out;
 }
 
 header h1 {
+  margin: 0;
   font-size: 2.8em;
-  color: #fff;
-  animation: pulse 2s infinite;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .container {
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  display: none;
+  margin: 30px auto;
+  padding: 20px;
+  animation: fadeIn 2s ease-out;
 }
 
 .text-section {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: white;
   padding: 30px;
-  animation: fadeInUp 2s ease;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  animation: bounceIn 1.5s ease;
 }
 
 .text-section p {
-  font-size: 1.2em;
-  line-height: 1.9;
-  animation: typing 5s steps(60, end);
-  white-space: pre-line;
-  overflow: hidden;
+  font-size: 1.3em;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
-  animation: zoomIn 2s ease;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeInUp 1.5s ease;
 }
 
 .gallery img {
-  width: 100%;
+  width: 250px;
   height: auto;
   border-radius: 15px;
-  object-fit: cover;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  opacity: 0;
+}
+
+.gallery img:nth-child(1) {
+  animation: zoomIn 1.2s ease forwards 0.2s;
+}
+.gallery img:nth-child(2) {
+  animation: zoomIn 1.2s ease forwards 0.4s;
+}
+.gallery img:nth-child(3) {
+  animation: zoomIn 1.2s ease forwards 0.6s;
+}
+.gallery img:nth-child(4) {
+  animation: zoomIn 1.2s ease forwards 0.8s;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 footer {
-  background: #ff6b6b;
-  color: #fff;
+  background: #ff6b81;
+  color: white;
   text-align: center;
   padding: 15px 0;
-  margin-top: 50px;
-  animation: slideUp 1s ease;
-  text-shadow: 0 0 10px #fff;
-}
-
-/* Lock Screen */
-#lockScreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to right, #ffe4e1, #ffccd5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.lock-box {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  text-align: center;
-  animation: bounceIn 1.5s;
-}
-
-.lock-box h2 {
-  color: #ff6b6b;
-  margin-bottom: 20px;
-}
-
-.lock-box input {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-  margin-bottom: 10px;
-  width: 80%;
-}
-
-.lock-box button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #ff6b6b;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.lock-box button:hover {
-  background: #ff4c4c;
-}
-
-/* Heart Particle Background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url('https://i.imgur.com/3g7nmJC.png');
-  background-repeat: repeat;
-  background-size: 50px;
-  animation: hearts 20s linear infinite;
-  opacity: 0.3;
+  font-size: 1.1em;
+  animation: fadeIn 2s ease;
 }
 
 /* Animations */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(100px); }
-  100% { opacity: 1; transform: translateY(0); }
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-@keyframes slideDown {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes slideUp {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes bounceIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  60% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); }
-}
-
-@keyframes hearts {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 1000px; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
