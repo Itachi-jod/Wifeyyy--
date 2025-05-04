@@ -3,40 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Little Princess</title>
+  <title>My Wifey</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<audio id="bgm" autoplay loop>
-  <source src="https://files.catbox.moe/qxyd29.mp3" type="audio/mpeg">
-</audio>
-
 <div id="lock-screen">
   <h2>Enter the Secret Password</h2>
-  <input type="password" id="password-input" placeholder="Enter password..." />
-  <button onclick="unlock()">Unlock</button>
+  <input type="password" id="password" placeholder="Enter password" />
+  <button id="unlock-btn">Unlock</button>
 </div>
 
 <div id="main-content" class="hidden">
-  <header>
-    <h1>Here's my little princess 😍🎀</h1>
-  </header>
-
+  <h1>Here's my little princess 😍🎀</h1>
   <div class="gallery">
-    <img src="https://i.ibb.co/1Y7FcPXQ/image.jpg" alt="Princess 1">
-    <img src="https://i.ibb.co/213tWgYC/image.jpg" alt="Princess 2">
-    <img src="https://i.ibb.co/6RdHqcKr/image.jpg" alt="Princess 3">
-    <img src="https://i.ibb.co/9kdJvQmr/image.jpg" alt="Princess 4">
-    <img src="https://i.ibb.co/bMCwfCXz/image.jpg" alt="Princess 5">
-    <img src="https://i.ibb.co/844GNs39/image.jpg" alt="Princess 6">
-    <img src="https://i.ibb.co/5hbPMNfm/image.jpg" alt="Princess 7">
+    <img src="https://i.ibb.co/1Y7FcPXQ/image.jpg" />
+    <img src="https://i.ibb.co/213tWgYC/image.jpg" />
+    <img src="https://i.ibb.co/6RdHqcKr/image.jpg" />
+    <img src="https://i.ibb.co/9kdJvQmr/image.jpg" />
+    <img src="https://i.ibb.co/bMCwfCXz/image.jpg" />
+    <img src="https://i.ibb.co/844GNs39/image.jpg" />
+    <img src="https://i.ibb.co/5hbPMNfm/image.jpg" />
   </div>
-
-  <footer>
-    <p>©made by itachi</p>
-  </footer>
+  <footer>©made by itachi</footer>
 </div>
+
+<canvas id="confetti-canvas"></canvas>
 
 <script src="script.js"></script>
 </body>
