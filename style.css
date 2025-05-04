@@ -3,37 +3,31 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: url('https://i.ibb.co/VWfg0Y6/image.jpg') no-repeat center center fixed;
+  background: url('https://i.ibb.co/dstWt058/image.jpg') no-repeat center center fixed;
   background-size: cover;
   text-align: center;
   color: #444;
 }
 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 #lock-screen {
   margin-top: 150px;
   animation: fadeIn 1.5s ease;
-  background: url('https://i.ibb.co/dstWt058/image.jpg') no-repeat center center;
+  background: url('https://i.ibb.co/VWfg0Y6/image.jpg') no-repeat center center;
   background-size: cover;
   padding: 40px;
   border-radius: 20px;
-  max-width: 90%;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 #lock-screen input {
