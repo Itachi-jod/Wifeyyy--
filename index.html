@@ -7,47 +7,52 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Lock Screen -->
   <div id="lock-screen">
-    <div class="lock-box">
-      <h2>Enter Password to Continue</h2>
-      <input type="password" id="password-input" placeholder="Password..." />
-      <button onclick="unlock()">Unlock</button>
+    <div class="lock-content">
+      <h2>Enter Our Secret Password</h2>
+      <input type="password" id="password-input" placeholder="Enter password..." />
+      <button id="unlock-btn">Unlock</button>
       <p id="error-msg"></p>
     </div>
   </div>
 
-  <audio id="bgm" autoplay loop>
+  <!-- Background Music -->
+  <audio id="bgm" autoplay loop muted>
     <source src="https://files.catbox.moe/qxyd29.mp3" type="audio/mpeg">
   </audio>
 
-  <div id="content" style="display: none;">
-    <header>
-      <h1>For My Beautiful Wifey 💖</h1>
-    </header>
+  <!-- Header -->
+  <header>
+    <h1>For My Beautiful Wifey 💖</h1>
+  </header>
 
-    <div class="container">
-      <div class="text-section">
-        <p>
-          My dearest love 💖,<br><br>
-          From the moment we met, you changed everything. Your eyes, your smile, your soul — they all became the light that guides me. 🌟 I never knew love could feel so deep, so peaceful, and so powerful until you showed me. 🥺💫<br><br>
-          Every second with you is a moment I cherish, and every word you speak is music to my heart 🎶. Through good days and bad, your love gives me strength, and your presence gives me peace 🕊️.<br><br>
-          I promise to love you more every single day, to protect your heart like it’s my own, and to stay by your side forever — through every laugh, every tear, every memory yet to come 🥰. Thank you for choosing me, for trusting me, and for being my forever and always 💍.<br><br>
-          I love you endlessly, Ishma. This page is just a tiny reflection of how deeply you're cherished. ❤️
-        </p>
-      </div>
-
-      <div class="gallery">
-        <img src="https://i.ibb.co/9kdJvQm/image.jpg" alt="Image 1" />
-        <img src="https://i.ibb.co/6RdHqcK/image.jpg" alt="Image 2" />
-        <img src="https://i.ibb.co/213tWgY/image.jpg" alt="Image 3" />
-        <img src="https://i.ibb.co/1Y7FcPX/image.jpg" alt="Image 4" />
-      </div>
+  <!-- Main Content -->
+  <div class="container">
+    <div class="text-section">
+      <p>
+        My dearest love 💖,<br><br>
+        From the moment I saw you, my world became brighter. Your smile lights up even my darkest days ✨. Your voice is the melody that plays in my heart every moment 🎵. You are my sunshine, my moonlight, and the stars in my sky 🌙⭐.<br><br>
+        I promise to love you through every sunrise and sunset, through all storms and rainbows. Every second with you is a memory I want to hold forever ⏳. With you, I found my home, my peace, my forever 🏡.<br><br>
+        Thank you for being the most beautiful chapter of my life. I love you endlessly and eternally. You are everything I ever dreamed of and more 💍❤️.
+      </p>
     </div>
 
-    <footer>
-      <p>Made by Lord Itachi 🤍</p>
-    </footer>
+    <div class="gallery">
+      <img src="https://i.ibb.co/9kdJvQm/image.jpg" alt="Picture 1">
+      <img src="https://i.ibb.co/6RdHqcK/image.jpg" alt="Picture 2">
+      <img src="https://i.ibb.co/213tWgY/image.jpg" alt="Picture 3">
+      <img src="https://i.ibb.co/1Y7FcPX/image.jpg" alt="Picture 4">
+    </div>
   </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with love by Lord Itachi 🤍</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
