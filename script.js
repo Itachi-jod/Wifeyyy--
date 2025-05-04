@@ -1,68 +1,46 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const lockScreen = document.getElementById('lock-screen');
-  const unlockBtn = document.getElementById('unlock-btn');
-  const passwordInput = document.getElementById('password-input');
-  const errorMsg = document.getElementById('error-msg');
+document.addEventListener("DOMContentLoaded", function () {
+  const lockScreen = document.getElementById("lock-screen");
+  const mainContent = document.getElementById("main-content");
+  const unlockBtn = document.getElementById("unlock-btn");
+  const passwordInput = document.getElementById("password");
 
-  unlockBtn.addEventListener('click', () => {
-    const pass = passwordInput.value.trim();
-    if (pass === 'ISHMA+ASHIB') {
-      lockScreen.style.display = 'none';
-      startConfetti();
-      const audio = document.getElementById('bgm');
-      audio.muted = false;
-      audio.play();
+  unlockBtn.addEventListener("click", () => {
+    const password = passwordInput.value.trim();
+    if (password === "ISHMA+ASHIB") {
+      lockScreen.classList.add("hidden");
+      mainContent.classList.remove("hidden");
+      document.getElementById("bgm").muted = false;
+      launchConfetti();
     } else {
-      errorMsg.textContent = 'Incorrect password! Try again.';
+      alert("Wrong password! Try again.");
     }
   });
-});
 
-function startConfetti() {
-  const canvas = document.getElementById('confetti-canvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  function launchConfetti() {
+    const duration = 3 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
 
-  let particles = Array.from({ length: 150 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 6 + 2,
-    d: Math.random() * 150,
-    color: `hsl(${Math.random() * 360}, 70%, 60%)`,
-    tilt: Math.floor(Math.random() * 10) - 10,
-    tiltAngle: 0,
-    tiltAngleIncrement: (Math.random() * 0.07) + 0.05
-  }));
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p) => {
-      ctx.beginPath();
-      ctx.lineWidth = p.r;
-      ctx.strokeStyle = p.color;
-      ctx.moveTo(p.x + p.tilt, p.y);
-      ctx.lineTo(p.x, p.y + p.tilt + p.r);
-      ctx.stroke();
-    });
-    update();
-    requestAnimationFrame(draw);
-  }
-
-  function update() {
-    for (let i = 0; i < particles.length; i++) {
-      let p = particles[i];
-      p.tiltAngle += p.tiltAngleIncrement;
-      p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
-      p.x += Math.sin(p.d);
-      p.tilt = Math.sin(p.tiltAngle - i / 3) * 15;
-
-      if (p.y > canvas.height) {
-        p.x = Math.random() * canvas.width;
-        p.y = -20;
-      }
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
     }
-  }
 
-  draw();
-}
+    const interval = setInterval(function () {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      confetti(Object.assign({}, defaults, {
+        particleCount: 50,
+        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+      }));
+
+      confetti(Object.assign({}, defaults, {
+        particleCount: 50,
+        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+      }));
+    }, 250);
+  }
+});
