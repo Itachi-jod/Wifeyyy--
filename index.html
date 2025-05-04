@@ -3,57 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Wifey</title>
+  <title>My Little Princess</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Lock Screen -->
-  <div id="lock-screen">
-    <div class="lock-content">
-      <h2>Enter Our Secret Password</h2>
-      <input type="password" id="password-input" placeholder="Enter password..." />
-      <button id="unlock-btn">Unlock</button>
-      <p id="error-msg"></p>
-    </div>
-  </div>
 
-  <!-- Background Music -->
-  <audio id="bgm" autoplay loop muted>
-    <source src="https://files.catbox.moe/qxyd29.mp3" type="audio/mpeg">
-  </audio>
+<audio id="bgm" autoplay loop>
+  <source src="https://files.catbox.moe/qxyd29.mp3" type="audio/mpeg">
+</audio>
 
-  <!-- Header -->
+<div id="lock-screen">
+  <h2>Enter the Secret Password</h2>
+  <input type="password" id="password-input" placeholder="Enter password..." />
+  <button onclick="unlock()">Unlock</button>
+</div>
+
+<div id="main-content" class="hidden">
   <header>
-    <h1>For My Beautiful Wifey 💖</h1>
+    <h1>Here's my little princess 😍🎀</h1>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="text-section">
-      <p>
-        My dearest love 💖,<br><br>
-        From the moment I saw you, my world became brighter. Your smile lights up even my darkest days ✨. Your voice is the melody that plays in my heart every moment 🎵. You are my sunshine, my moonlight, and the stars in my sky 🌙⭐.<br><br>
-        I promise to love you through every sunrise and sunset, through all storms and rainbows. Every second with you is a memory I want to hold forever ⏳. With you, I found my home, my peace, my forever 🏡.<br><br>
-        Thank you for being the most beautiful chapter of my life. I love you endlessly and eternally. You are everything I ever dreamed of and more 💍❤️.
-      </p>
-    </div>
-
-    <div class="gallery">
-      <img src="https://i.ibb.co/9kdJvQm/image.jpg" alt="Picture 1">
-      <img src="https://i.ibb.co/6RdHqcK/image.jpg" alt="Picture 2">
-      <img src="https://i.ibb.co/213tWgY/image.jpg" alt="Picture 3">
-      <img src="https://i.ibb.co/1Y7FcPX/image.jpg" alt="Picture 4">
-    </div>
+  <div class="gallery">
+    <img src="https://i.ibb.co/1Y7FcPXQ/image.jpg" alt="Princess 1">
+    <img src="https://i.ibb.co/213tWgYC/image.jpg" alt="Princess 2">
+    <img src="https://i.ibb.co/6RdHqcKr/image.jpg" alt="Princess 3">
+    <img src="https://i.ibb.co/9kdJvQmr/image.jpg" alt="Princess 4">
+    <img src="https://i.ibb.co/bMCwfCXz/image.jpg" alt="Princess 5">
+    <img src="https://i.ibb.co/844GNs39/image.jpg" alt="Princess 6">
+    <img src="https://i.ibb.co/5hbPMNfm/image.jpg" alt="Princess 7">
   </div>
 
-  <!-- Confetti Canvas -->
-  <canvas id="confetti-canvas"></canvas>
-
-  <!-- Footer -->
   <footer>
-    <p>Made with love by Lord Itachi 🤍</p>
+    <p>©made by itachi</p>
   </footer>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
