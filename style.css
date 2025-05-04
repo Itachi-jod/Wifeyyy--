@@ -3,9 +3,8 @@
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(270deg, #ffe4ec, #fcd3e2, #fceff9);
-  background-size: 600% 600%;
-  animation: gradientAnimation 12s ease infinite;
+  background: url('https://i.ibb.co/VWfg0Y6/image.jpg') no-repeat center center fixed;
+  background-size: cover;
   text-align: center;
   color: #444;
 }
@@ -19,21 +18,22 @@ body {
 #lock-screen {
   margin-top: 150px;
   animation: fadeIn 1.5s ease;
-  background: url('https://i.ibb.co/VWfg0Y6s/image.jpg') no-repeat center center;
+  background: url('https://i.ibb.co/dstWt058/image.jpg') no-repeat center center;
   background-size: cover;
-  padding: 40px 20px;
+  padding: 40px;
   border-radius: 20px;
-  max-width: 400px;
+  max-width: 90%;
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  color: white;
 }
 
 h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 #lock-screen input {
