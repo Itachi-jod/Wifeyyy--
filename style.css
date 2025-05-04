@@ -186,5 +186,4 @@ body::before {
 @keyframes hearts {
   0% { background-position: 0 0; }
   100% { background-position: 1000px 1000px; }
-  }
-       
+}
